@@ -18,11 +18,17 @@ const ShoppingCart = () => {
 
 	const removeBook = (id) => {
 		console.log(id);
-		let newCart = cart.map( (book) => {
-			if ( id !== book.id ) {
-				return book;
-			}
-		})
+		// const newCart = cart.map( (book) => {
+		// 	if ( id != book.id ) {
+		// 		console.log(book)
+		// 		return book;
+		// 	} else {
+		// 		console.log('this one shouldn\'t return', book)
+		// 	}
+		// })
+		const newCart = cart.filter( (book) => {
+			return id != book.id;
+		});
 		console.log(newCart)
 		setCart(newCart);
 	}

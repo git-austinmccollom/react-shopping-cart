@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import data from "./data";
 
@@ -18,8 +18,13 @@ function App() {
   const addItem = (item) => {
     let newCart = [...cart];
     newCart.push(item);
-    setCart(newCart);
+	setCart(newCart);
   };
+
+  //using this for debugging purposes
+  useEffect( () => {
+	  console.log(cart);
+  }, [cart])
 
   return (
     <div className="App">
